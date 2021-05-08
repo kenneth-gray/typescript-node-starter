@@ -1,1 +1,1 @@
-# typescript-node-starter
+# TypeScript Node starter

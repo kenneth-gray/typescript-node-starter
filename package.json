@@ -1,0 +1,45 @@
+{
+  "name": "typescript-node-starter",
+  "version": "1.0.0",
+  "description": "TypeScript Node starter",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext js,ts && tsc -p . --noEmit",
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "build:watch": "tsc -w -p tsconfig.build.watch.json",
+    "test": "jest",
+    "dev": "rimraf dist && node scripts/create-dist-and-index.js && concurrently -k \"npm run build:watch\" \"nodemon -w dist -w .env -x node dist/index.js\"",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kenneth-gray/typescript-node-starter.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Kenneth Gray",
+  "bugs": {
+    "url": "https://github.com/kenneth-gray/typescript-node-starter/issues"
+  },
+  "homepage": "https://github.com/kenneth-gray/typescript-node-starter#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "concurrently": "^6.1.0",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "dotenv": "^9.0.0"
+  }
+}
